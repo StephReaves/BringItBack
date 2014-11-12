@@ -26,6 +26,12 @@
           <a href="/login">Login</a> | <a href="/signup">Signup</a>
         <% end %>
     </div>
+
+    <div id="campaign-toolbar">
+        <% if current_user %>
+          <a href="/campaign">Create a Campaign!</a>
+        <% end %>
+    </div>
   </header>
   <%= display_error %>
   <%= yield %>

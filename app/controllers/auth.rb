@@ -1,4 +1,5 @@
 get '/' do
+  @campaigns = Campaign.all
   erb :'index'
 end
 
