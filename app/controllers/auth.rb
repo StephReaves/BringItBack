@@ -12,7 +12,7 @@ post  '/login' do
 
   if user
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/user/#{user.id}"
   else
     set_error "Please check your password and username"
     redirect '/login'
@@ -33,7 +33,7 @@ post '/signup' do
 
   if user.save
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/user/#{user.id}"
   else
     set_error "Pick another name, password, or valid email"
     redirect "/signup?name=#{params[:user][:username]}"

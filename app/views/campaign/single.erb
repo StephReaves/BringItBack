@@ -1,5 +1,7 @@
-<h3> Title: <%= @campaign.title %></h3>
-<h3> Champion: <%= @campaign.user.username %></h3>
-<h5> What is it: <%= @campaign.what %></h5>
-<h5> Why it matters: <%= @campaign.why %></h5>
-
+<div class="campaign">
+  <h3> Title: <%= @campaign.title %></h3>
+  <h3> Champion: <%= @campaign.user.username %></h3>
+  <h5> What is it: <%= @campaign.what %></h5>
+  <h5> Why it matters: <%= @campaign.why %></h5>
+  <a href="/campaign/<%= @campaign.id %>/edit">Click to edit campaign</a>
+</div>

@@ -22,6 +22,9 @@
      <div id="login-toolbar">
         <% if current_user %>
           <a href="/logout">Logout</a>
+          <p>Welcome <%= @user.username %>!</p>
+          <a href="/campaigns">View All Campaigns</a> <br>
+          <a href="/user/<%= current_user.id%>">Your Campaigns</a>
         <% else %>
           <a href="/login">Login</a> | <a href="/signup">Signup</a>
         <% end %>
@@ -29,7 +32,7 @@
 
     <div id="campaign-toolbar">
         <% if current_user %>
-          <a href="/campaign">Create a Campaign!</a>
+          <a href="/campaigns/new">Create a Campaign!</a>
         <% end %>
     </div>
   </header>
