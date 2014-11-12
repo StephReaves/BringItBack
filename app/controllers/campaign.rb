@@ -1,4 +1,4 @@
-['/campaign/:id', '/campaign/:id/edit'].each do |route|
+['/campaign/:id', '/campaign/:id/edit', '/campaign/:id/vote'].each do |route|
   before route do |id|
     @campaign = Campaign.find(id)
   end
@@ -40,4 +40,17 @@ end
 delete '/campaign/:id', auth: :user do |id|
   @campaign.destroy
   redirect "/user/#{current_user.id}"
+end
+
+#voting
+post '/campaign/:id/vote', auth: :user do |id|
+  unless @campaign.vote(current_user)
+    set_error "You have voted on this already"
+  end
+
+  if request.xhr?
+    {}
+  else
+  end
+
 end

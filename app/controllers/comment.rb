@@ -24,15 +24,15 @@ post '/comments' do
 end
 
 get '/comment/:id/edit', auth: :user do |id|
-  erb :'/campaign/_update_form', locals: {comment: @comment}
+  erb :'/comment/_update_form', locals: {comment: @comment}
 end
 
 put '/comment/:id', auth: :user do |id|
-  @comment.update(params[:comment)
-  redirect "/campaign/#{comment.campaign.id}"
+  @comment.update(params[:comment])
+  redirect "/campaign/#{@comment.campaign.id}"
 end
 
 delete '/comment/:id', auth: :user do |id|
   @comment.destroy
-  redirect "/campaign/#{comment.campaign.id}"
+  redirect "/campaign/#{@comment.campaign.id}"
 end

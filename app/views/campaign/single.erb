@@ -9,7 +9,7 @@
   <div class="campaign-comment">
     <h4>Comments on the campaign</h4>
     <% @comments.each do |comment| %>
-      <p><%=comment.text %></p>
+      <p><%=comment.text %> | <a href="/comment/<%= comment.id %>/edit">Edit</a></p>
     <% end %>
   </div>
 

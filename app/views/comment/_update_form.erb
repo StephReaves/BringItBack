@@ -1,5 +1,5 @@
 <div class="comment-update">
-  <form action="/comment/<%= @campaign.id %>" method="POST">
+  <form action="/comment/<%= @comment.campaign.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <%= erb :'/comment/_form_input', locals: {comment: @comment} %>
   </form>

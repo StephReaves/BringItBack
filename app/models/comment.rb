@@ -4,4 +4,18 @@ class Comment < ActiveRecord::Base
   belongs_to :campaign
 
   has_many :votes, as: :votable
+
+  def vote(user)
+    if self.votes.include?(user)
+      return false
+    else
+      self.votable.create(user: user)
+      return true
+    end
+  end
+
+  def score
+    self.votes.size
+  end
+
 end
