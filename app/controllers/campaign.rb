@@ -43,14 +43,14 @@ delete '/campaign/:id', auth: :user do |id|
 end
 
 #voting
-post '/campaign/:id/vote', auth: :user do |id|
-  unless @campaign.vote(current_user)
-    set_error "You have voted on this already"
-  end
+# post '/campaign/:id/vote', auth: :user do |id|
+#   unless @campaign.vote(current_user)
+#     set_error "You have voted on this already"
+#   end
 
-  if request.xhr?
-    {}
-  else
-  end
+#   if request.xhr?
 
-end
+#   else
+#   end
+
+# end

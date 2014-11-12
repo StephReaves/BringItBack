@@ -9,7 +9,10 @@
   <div class="campaign-comment">
     <h4>Comments on the campaign</h4>
     <% @comments.each do |comment| %>
-      <p><%=comment.text %> | <a href="/comment/<%= comment.id %>/edit">Edit</a></p>
+      <form action="/comment/<%= comment.id %>/vote" method="POST">
+        <p><%=comment.text %> | <a href="/comment/<%= comment.id %>/edit">Edit</a> | </p>
+        <input type="submit" class="vote-btn" value="Vote!">
+      </form>
     <% end %>
   </div>
 

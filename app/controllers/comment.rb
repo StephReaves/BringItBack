@@ -1,4 +1,4 @@
-['/comment/:id', '/comment/:id/edit'].each do |route|
+['/comment/:id', '/comment/:id/edit', '/comment/:id/vote'].each do |route|
   before route do |id|
     @comment = Comment.find(id)
   end
@@ -36,3 +36,18 @@ delete '/comment/:id', auth: :user do |id|
   @comment.destroy
   redirect "/campaign/#{@comment.campaign.id}"
 end
+
+#voting
+post '/comment/:id/vote', auth: :user do |id|
+  unless @comment.vote(current_user)
+    set_error "You have voted on this already"
+  end
+
+  if request.xhr?
+    return {score: @comment.score}.to_json
+  else
+    redirect "/comment#{@comment.id}"
+  end
+
+end
+
