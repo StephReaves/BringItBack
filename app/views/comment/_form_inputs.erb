@@ -1,0 +1,11 @@
+<% if current_user %>
+  <div class="comment-input">
+   <form action="/comments" method="POST">
+    Comment Text: <input type="text" name="comment[text]" value="<% campaign.title%>" placeholder="<%= campaign.title%>"> <br>
+    What: <textarea name="campaign[what]" value="<% campaign.what%>" placeholder="<%= campaign.what%>"><% campaign.what%></textarea><br>
+    Why: <textarea name="campaign[why]" value="<% campaign.why%>" placeholder="<%= campaign.why%>"></textarea><br>
+    <input type="submit" value="Submit!">
+   </form>
+  </div>
+<% end %>
+

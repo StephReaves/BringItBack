@@ -1,0 +1,12 @@
+<div class="comment-update">
+  <form action="/comment/<%= @campaign.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <%= erb :'/comment/_form_input', locals: {comment: @comment} %>
+  </form>
+
+  <form action="/comment/<%= @comment.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete comment">
+  </form>
+</div>
+
