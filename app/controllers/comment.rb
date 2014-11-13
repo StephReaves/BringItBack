@@ -46,7 +46,7 @@ post '/comment/:id/vote', auth: :user do |id|
   if request.xhr?
     return {score: @comment.score}.to_json
   else
-    redirect "/comment#{@comment.id}"
+    redirect "/campaign/#{@comment.campaign.id}"
   end
 
 end

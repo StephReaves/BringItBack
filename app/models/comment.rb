@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
     if self.votes.include?(user)
       return false
     else
-      self.votable.create(user: user)
+      self.votes << Vote.create(votable: user)
       return true
     end
   end
