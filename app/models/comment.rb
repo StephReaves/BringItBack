@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   has_many :votes, as: :votable
 
   def vote(user)
-    if self.votes.include?(user)
+    if self.votes.find_by(votable: user.id)
       return false
     else
       self.votes << Vote.create(votable: user)

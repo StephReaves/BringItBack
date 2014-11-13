@@ -18,11 +18,11 @@
       </div>
     <% end %>
   </div>
-
+  <br>
   <div class="comment-form">
    <form action="/comments" method="POST">
     <input type="hidden" name="comment[campaign_id]" value="<%= @campaign.id %>" >
-    <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
+    Make a comment: <br> <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
     <input type="submit" value="Create my comment!">
    </form>
   </div>

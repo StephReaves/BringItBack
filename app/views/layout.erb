@@ -14,6 +14,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
   <title></title>
 </head>
@@ -26,11 +27,11 @@
           <a href="/campaigns">View All Campaigns</a> <br>
           <a href="/user/<%= current_user.id%>">Your Campaigns</a>
         <% else %>
-          <a href="/login">Login</a> | <a href="/signup">Signup</a>
+          <h1> <a href="/login">Login</a> | <a href="/signup">Signup</a> </h1>
         <% end %>
     </div>
 
-    <div id="campaign-toolbar">
+    <div id="campaign-toolbar" class="campaign-link">
         <% if current_user %>
           <a href="/campaigns/new">Create a Campaign!</a>
         <% end %>

@@ -6,6 +6,6 @@ def display_error
   if session[:error]
     error = session[:error]
     session[:error] = nil
-    return "<p>Error: #{error}</p>"
+    return "<h1><p>Error: #{error}</p></h1>"
   end
 end
