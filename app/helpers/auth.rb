@@ -4,4 +4,9 @@ def current_user
   else
     nil
   end
+  @user
+end
+
+def user_can_edit?(thing)
+  current_user && current_user.may_edit(thing)
 end

@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :votes, as: :votable
 
+  def may_edit(item)
+    item.user.id == self.id
+  end
 end

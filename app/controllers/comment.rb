@@ -23,22 +23,27 @@ post '/comments' do
   end
 end
 
-get '/comment/:id/edit', auth: :user do |id|
+get '/comment/:id/edit' do |id|
   erb :'/comment/_update_form', locals: {comment: @comment}
 end
 
 put '/comment/:id', auth: :user do |id|
-  @comment.update(params[:comment])
-  redirect "/campaign/#{@comment.campaign.id}"
+  if current_user.may_edit(@comment)
+    @comment.update(params[:comment])
+    redirect "/campaign/#{@comment.campaign.id}"
+  else
+    set_error "You may not edit this"
+    redirect "/campaign/#{@comment.campaign.id}"
+  end
 end
 
-delete '/comment/:id', auth: :user do |id|
+delete '/comment/:id' do |id|
   @comment.destroy
   redirect "/campaign/#{@comment.campaign.id}"
 end
 
 #voting
-post '/comment/:id/vote', auth: :user do |id|
+post '/comment/:id/vote' do |id|
   unless @comment.vote(current_user)
     set_error "You have voted on this already"
   end

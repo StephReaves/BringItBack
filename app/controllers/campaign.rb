@@ -33,8 +33,13 @@ end
 
 #update campaign
 put '/campaign/:id', auth: :user do |id|
-  @campaign.update(params[:campaign])
-  redirect "/user/#{current_user.id}"
+  if current_user.may_edit(@campaign)
+    @campaign.update(params[:campaign])
+    redirect "/campaign/#{@campaign.id}"
+  else
+    set_error "You may not edit this"
+    redirect "/campaign/#{@campaign.id}"
+  end
 end
 
 delete '/campaign/:id', auth: :user do |id|
@@ -42,7 +47,7 @@ delete '/campaign/:id', auth: :user do |id|
   redirect "/user/#{current_user.id}"
 end
 
-#voting
+#voting tb added if there is enough time
 # post '/campaign/:id/vote', auth: :user do |id|
 #   unless @campaign.vote(current_user)
 #     set_error "You have voted on this already"
