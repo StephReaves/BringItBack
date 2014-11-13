@@ -19,7 +19,7 @@ post '/comments' do
   if request.xhr?
     erb :'comment/single', locals: {comment: @comment}, layout: false
   else
-    redirect "/campaign/#{comment.campaign.id}"
+    redirect "/campaign/#{@comment.campaign.id}"
   end
 end
 
