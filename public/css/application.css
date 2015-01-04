@@ -55,6 +55,10 @@ a:visited {
     color: #00FF00;
 }
 
+/*.comment-form {
+    visibility: hidden;
+}*/
+
 
 form {
     width: 80%;
