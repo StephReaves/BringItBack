@@ -1,0 +1,10 @@
+<% if current_user %>
+  <div class="campaign-form">
+   <form action="/campaigns" method="POST">
+    <input type="text" name="campaign[title]" placeholder="Title"> <br>
+    <textarea name="campaign[what]" placeholder="What do you want to bring back?"></textarea><br>
+    <textarea name="campaign[why]" placeholder="why do you want it back?"></textarea><br>
+    <input type="submit" value="Create my campaign!">
+   </form>
+  </div>
+<% end %>

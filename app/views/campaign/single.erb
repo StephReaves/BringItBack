@@ -1,0 +1,30 @@
+<div class="campaign">
+  <h3> Title: <%= @campaign.title %></h3>
+  <h3> Champion: <%= @campaign.user.username %></h3>
+  <h5> What is it: <%= @campaign.what %></h5>
+  <h5> Why it matters: <%= @campaign.why %></h5>
+
+  <a href="/campaign/<%= @campaign.id %>/edit">Click to edit campaign</a> <br><br>
+
+  <div class="campaign-comment">
+    <h4>Comments on the campaign</h4>
+    <% @comments.each do |comment| %>
+      <div class="comment-single">
+      <form action="/comment/<%= comment.id %>/vote" method="POST">
+        <p><%=comment.text %> | <a href="/comment/<%= comment.id %>/edit">Edit</a> | </p>
+        Vote count: <div class="vote_display"><%= comment.votes.size %></div>
+        <input type="submit" class="vote-btn" value="Vote!">
+      </form>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <div class="comment-form">
+   <form action="/comments" method="POST">
+    <input type="hidden" name="comment[campaign_id]" value="<%= @campaign.id %>" >
+    Make a comment: <br> <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
+    <input type="submit" value="Create my comment!">
+   </form>
+  </div>
+
+</div>

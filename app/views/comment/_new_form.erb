@@ -1,0 +1,9 @@
+<% if current_user %>
+  <div class="comment-form">
+   <form action="/comments" method="POST">
+    <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
+    <input type="submit" value="Create my comment!">
+   </form>
+  </div>
+<% end %>
+
