@@ -1,12 +1,12 @@
 <div class="campaign-update">
-  <%= display_error %>
-  <form action="/campaign/<%= @campaign.id %>" method="POST">
-    <input type="hidden" name="_method" value="PUT">
-    <%= erb :'/campaign/_form_input', locals: {campaign: @campaign} %>
-  </form>
+	<%= display_error %>
+	<form action="/campaign/<%= @campaign.id %>" method="POST">
+		<input type="hidden" name="_method" value="PUT">
+		<%= erb :'/campaign/_form_input', locals: {campaign: @campaign} %>
+	</form>
 
-  <form action="/campaign/<%= @campaign.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete campaign">
-  </form>
+	<form action="/campaign/<%= @campaign.id %>" method="POST">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="delete campaign">
+	</form>
 </div>

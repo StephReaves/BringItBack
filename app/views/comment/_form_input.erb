@@ -1,9 +1,9 @@
 <% if current_user %>
-  <div class="comment-input">
-   <form action="/comments" method="POST">
-    <br> Comment Text: <br> <textarea name="comment[text]" value="<% comment.text %>" placeholder="<%=  comment.text %>"></textarea><br><br>
-    <input type="submit" value="Update Comment!">
-   </form>
-  </div>
+<div class="comment-input">
+	<form action="/comments" method="POST">
+		<br> Comment Text: <br> <textarea name="comment[text]" value="<% comment.text %>" placeholder="<%=  comment.text %>"></textarea><br><br>
+		<input type="submit" value="Update Comment!">
+	</form>
+</div>
 <% end %>
 

@@ -1,10 +1,10 @@
 <div class="container">
-  <h3>Register for BringBack:</h3>
-  <%= display_error %>
-  <form action="/signup" method="POST">
-      <input type="text" name="user[email]" placeholder="Email"> <br>
-      <input type="text" name="user[username]" placeholder="Username" value="<% params[:username] %>"> <br>
-      <input type="password" name="user[password]" placeholder="Password"> <br>
-      <input type="submit" value="Submit">
-  </form>
+	<h3>Register for BringBack:</h3>
+	<%= display_error %>
+	<form action="/signup" method="POST">
+		<input type="text" name="user[email]" placeholder="Email"> <br>
+		<input type="text" name="user[username]" placeholder="Username" value="<% params[:username] %>"> <br>
+		<input type="password" name="user[password]" placeholder="Password"> <br>
+		<input type="submit" value="Submit">
+	</form>
 </div>
