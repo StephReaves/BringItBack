@@ -9,22 +9,22 @@
   <div class="campaign-comment">
     <h4>Comments on the campaign</h4>
     <% @comments.each do |comment| %>
-      <div class="comment-single">
+    <div class="comment-single">
       <form action="/comment/<%= comment.id %>/vote" method="POST">
         <p><%=comment.text %> | <a href="/comment/<%= comment.id %>/edit">Edit</a> | </p>
         Vote count: <div class="vote_display"><%= comment.votes.size %></div>
         <input type="submit" class="vote-btn" value="Vote!">
       </form>
-      </div>
+    </div>
     <% end %>
-  </div>
-  <br>
+  </div><br>
+
   <div class="comment-form">
-   <form action="/comments" method="POST">
-    <input type="hidden" name="comment[campaign_id]" value="<%= @campaign.id %>" >
-    Make a comment: <br> <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
-    <input type="submit" value="Create my comment!">
-   </form>
+    <form action="/comments" method="POST">
+      <input type="hidden" name="comment[campaign_id]" value="<%= @campaign.id %>" >
+      Make a comment: <br> <textarea name="comment[text]" placeholder="Input your comment"> </textarea><br>
+      <input type="submit" value="Create my comment!">
+    </form>
   </div>
 
 </div>

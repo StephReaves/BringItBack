@@ -1,8 +1,8 @@
- <div class="campaigns-all">
-   <h3>Your launched campaigns</h3>
-   <ul>
-      <% @campaigns.each do |campaign| %>
-        <li> <a href="/campaign/<%= campaign.id %>"> <%= campaign.title %></a> </li>
-      <% end %>
-   </ul>
+<div class="campaigns-all">
+	<h3>Your launched campaigns</h3>
+	<ul>
+		<% @campaigns.each do |campaign| %>
+		<li> <a href="/campaign/<%= campaign.id %>"> <%= campaign.title %></a> </li>
+		<% end %>
+	</ul>
 </div>
