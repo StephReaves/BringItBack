@@ -30,6 +30,18 @@
    background: #1b435e;
    }
 
+.welcome {
+  margin-top: 90px;
+}
+
+.campaign {
+  margin-top: 90px;
+}    
+
+.comment-form {
+  margin-bottom: 50px;
+}
+
 html,
 body {
   height: 100%;
