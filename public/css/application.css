@@ -30,9 +30,17 @@
    background: #1b435e;
    }
 
-.welcomg {
+.welcome {
   margin-top: 90px;
-}   
+}
+
+.campaign {
+  margin-top: 90px;
+}    
+
+.comment-form {
+  margin-bottom: 50px;
+}
 
 html,
 body {
