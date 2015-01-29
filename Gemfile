@@ -8,6 +8,10 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
+# Sintra database
+gem 'sinatra-sequel'
+gem 'sqlite3'
+
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
@@ -29,4 +33,10 @@ end
 group :test, :development do
   gem 'factory_girl'
   gem 'faker'
+  gem 'sqlite3'
+
+end 
+
+group :production do
+  gem 'pg' 
 end
