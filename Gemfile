@@ -10,7 +10,6 @@ gem 'sinatra-contrib'
 
 # Sintra database
 gem 'sinatra-sequel'
-gem 'sqlite3'
 
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
