@@ -28,7 +28,10 @@ get '/campaign/:id' do |id|
 end
 
 get '/campaign/:id/edit', auth: :user do |id|
+  # if current_user.may_edit(@campaign)
   erb :'/campaign/_update_form', locals: {campaign: @campaign}
+  # else
+  #   red  
 end
 
 #update campaign
@@ -43,8 +46,15 @@ put '/campaign/:id', auth: :user do |id|
 end
 
 delete '/campaign/:id', auth: :user do |id|
-  @campaign.destroy
-  redirect "/user/#{current_user.id}"
+
+  if current_user.may_edit(@campaign)
+    @campaign.destroy 
+    redirect "/user/#{current_user.id}"
+  else 
+    set_error "You can't delete this one buddy"
+    redirect "/campaign/#{campaign.id}"
+  end 
+
 end
 
 #voting tb added if there is enough time
